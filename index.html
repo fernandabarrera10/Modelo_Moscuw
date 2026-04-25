@@ -1,0 +1,90 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo MoSCoW</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Modelo MoSCoW</h1>
+  <p>Priorización de Requisitos en Proyectos</p>
+</header>
+
+<nav>
+  <button onclick="mostrar('intro')">¿Qué es?</button>
+  <button onclick="mostrar('must')">Must Have</button>
+  <button onclick="mostrar('should')">Should Have</button>
+  <button onclick="mostrar('could')">Could Have</button>
+  <button onclick="mostrar('wont')">Won't Have</button>
+</nav>
+
+<div class="container">
+  <div id="intro" class="card active">
+    <h2>¿Qué es el modelo MoSCoW?</h2>
+    <p>El modelo MoSCoW es una técnica de priorización utilizada en gestión de proyectos y desarrollo de software.</p>
+  </div>
+
+  <div id="must" class="card">
+    <h2>Must Have</h2>
+    <p>Requisitos críticos sin los cuales el proyecto falla.</p>
+  </div>
+
+  <div id="should" class="card">
+    <h2>Should Have</h2>
+    <p>Importantes pero no indispensables.</p>
+  </div>
+
+  <div id="could" class="card">
+    <h2>Could Have</h2>
+    <p>Mejoras opcionales si hay tiempo.</p>
+  </div>
+
+  <div id="wont" class="card">
+    <h2>Won't Have</h2>
+    <p>No se implementarán en esta fase.</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 - MoSCoW</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f9;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #34495e;
+  padding: 10px;
+  text-align: center;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background: #1abc9c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+}
