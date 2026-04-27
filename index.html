@@ -16,41 +16,66 @@
 
 <nav>
   <button onclick="mostrar('intro')">¿Qué es?</button>
-  <button onclick="mostrar('must')">Must Have</button>
-  <button onclick="mostrar('should')">Should Have</button>
-  <button onclick="mostrar('could')">Could Have</button>
-  <button onclick="mostrar('wont')">Won't Have</button>
+  <button onclick="mostrar('must')">Debe tener</button>
+  <button onclick="mostrar('should')">Debería tener</button>
+  <button onclick="mostrar('could')">Podría tener</button>
+  <button onclick="mostrar('wont')">No tendrá</button>
+  <button onclick="mostrar('ejemplo')">Ejemplo</button>
 </nav>
 
 <div class="container">
   <div id="intro" class="card active">
     <h2>¿Qué es el modelo MoSCoW?</h2>
-    <p>El modelo MoSCoW es una técnica de priorización utilizada en gestión de proyectos y desarrollo de software.</p>
+    <p>El modelo MoSCoW es una técnica de priorización utilizada en la gestión de proyectos y desarrollo de software. Permite organizar los requisitos según su importancia.</p>
   </div>
 
   <div id="must" class="card">
-    <h2>Must Have</h2>
-    <p>Requisitos críticos sin los cuales el proyecto falla.</p>
+    <h2>Debe tener (Must Have)</h2>
+    <p>Son requisitos críticos. Sin ellos, el proyecto no puede funcionar correctamente.</p>
   </div>
 
   <div id="should" class="card">
-    <h2>Should Have</h2>
-    <p>Importantes pero no indispensables.</p>
+    <h2>Debería tener (Should Have)</h2>
+    <p>Son importantes, pero el sistema puede funcionar sin ellos temporalmente.</p>
   </div>
 
   <div id="could" class="card">
-    <h2>Could Have</h2>
-    <p>Mejoras opcionales si hay tiempo.</p>
+    <h2>Podría tener (Could Have)</h2>
+    <p>Son características opcionales que mejoran la experiencia del usuario.</p>
   </div>
 
   <div id="wont" class="card">
-    <h2>Won't Have</h2>
-    <p>No se implementarán en esta fase.</p>
+    <h2>No tendrá (Won't Have)</h2>
+    <p>Son requisitos que no se incluirán en esta versión del proyecto.</p>
+  </div>
+
+  <!-- EJEMPLO -->
+  <div id="ejemplo" class="card">
+    <h2>Ejemplo práctico</h2>
+    <p>Supongamos que estás creando una tienda virtual:</p>
+    <ul>
+      <li><b>Debe tener:</b> Carrito de compras, registro de usuarios</li>
+      <li><b>Debería tener:</b> Métodos de pago adicionales</li>
+      <li><b>Podría tener:</b> Chat en vivo</li>
+      <li><b>No tendrá:</b> Realidad aumentada (por ahora)</li>
+    </ul>
+
+    <h3>Código de ejemplo (JavaScript)</h3>
+    <pre>
+const moscow = {
+  debe: ['Carrito', 'Usuarios'],
+  deberia: ['Pagos adicionales'],
+  podria: ['Chat en vivo'],
+  noTendra: ['Realidad aumentada']
+};
+
+console.log(moscow);
+    </pre>
   </div>
 </div>
 
 <footer>
-  <p>© 2026 - MoSCoW</p>
+  <p>© 2026 - Página educativa sobre el modelo MoSCoW</p>
 </footer>
 
 <script src="script.js"></script>
@@ -87,4 +112,42 @@ nav button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+pre {
+  background: #222;
+  color: #0f0;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+// script.js
+function mostrar(seccion) {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => card.classList.remove('active'));
+  document.getElementById(seccion).classList.add('active');
 }
